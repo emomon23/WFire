@@ -1,0 +1,9 @@
+.inputContainer{
+    padding-bottom: 15px;
+}
+
+.inputContainer label {
+    width: 205px;
+    display: block;
+    color: maroon;
+}

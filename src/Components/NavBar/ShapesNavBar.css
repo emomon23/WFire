@@ -1,0 +1,12 @@
+.My-nav-bar-container {
+  background-color: lightgray;
+  height: 50px;
+  padding: 20px;
+  color: white;
+}
+
+.My-nav-bar li{
+  display: inline;
+  margin-right: 10px;
+}
+
