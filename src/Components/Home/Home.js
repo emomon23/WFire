@@ -46,10 +46,10 @@ export default class Home extends Component {
                         The size of the shapes should all be randomized
                     </li>
                     <li>
-                        Circles are red
+                        Circles are blue
                     </li>
                     <li>
-                        Squares are blue
+                        Squares are red
                     </li>
                     <li>
                         Display the list of all shapes, ordered from largest to smallest
@@ -67,6 +67,10 @@ export default class Home extends Component {
             
                 <p className='Call-to-action'>
                     Click 'Shapes' navigation menu to see the results
+                </p>
+
+                <p>
+                    Source code can be found on <a href='https://github.com/emomon23/WFire/tree/master/src'>Github</a>
                 </p>
            </section>
        )

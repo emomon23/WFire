@@ -5,8 +5,8 @@ import {ShapeFactory, Randomizer} from '../../Pojos/ShapesFactory';
 import './Shape.css';
 
 class Shapes extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
         this.state = {
            totalNumberOfShapes: 10,
@@ -16,6 +16,8 @@ class Shapes extends Component {
            maxSize:80,
            shapeList: []
         };
+
+        this.inputChangeEvent = this.inputChangeEvent.bind(this);
     }
 
     createShapeList(state){
@@ -36,15 +38,15 @@ class Shapes extends Component {
             <div>
                 <div className='inputContainer'>
                     <label>Number of Shapes</label>
-                    <input value={self.state.totalNumberOfShapes} onChange={self.changeNumberOfShapes.bind(self)}/>
+                    <input name='totalNumberOfShapes' value={self.state.totalNumberOfShapes} onChange={self.inputChangeEvent}/>
                 </div>
                 <div className='inputContainer'>
                     <label>Circle Color</label>
-                    <input value={self.state.circleBackColor} onChange={self.changeCircleColor.bind(self)}/>
+                    <input name='circleBackColor' value={self.state.circleBackColor} onChange={self.inputChangeEvent}/>
                 </div>
                 <div className='inputContainer'>
                     <label>Square Color</label>
-                    <input value={self.state.squareBackColor} onChange={self.changeSquareColr.bind(self)}/>
+                    <input name='squareBackColor' value={self.state.squareBackColor} onChange={self.inputChangeEvent}/>
                 </div>
                 <table border='1'>
                     <tr>
@@ -74,24 +76,12 @@ class Shapes extends Component {
         );
     }
 
-    changeNumberOfShapes(event){
+    inputChangeEvent(event){
         this.state.shapeList = [];
-        this.setState({
-            totalNumberOfShapes: event.target.value
-        });
-    }
+        let name = event.target.name;
 
-    changeCircleColor(event){
-        this.state.shapeList = [];
         this.setState({
-            circleBackColor: event.target.value
-        });
-    }
-
-    changeSquareColr(event){
-        this.state.shapeList = [];
-        this.setState({
-            squareBackColor: event.target.value
+            [name]: event.target.value
         });
     }
 }
